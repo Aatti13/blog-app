@@ -1,13 +1,474 @@
-body {
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  /* Variables */
+  --font-white: white;
+  --black-bg: black;
+  --hover-select: darkorange;
+
+  --btn-light-orange: #f4b15a;
+  --react-red: red;
+  --highlight-blue: blue;
+  scroll-behavior: smooth;
+}
+/* --------------------------------------------------------------------------- */
+/* GENERAL */
+.landingPage header{
+  position: sticky;
+  top: 0;
+  z-index: 500;
+  background: black;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+li{
+  list-style: none;
+}
+
+span{
+  font-size: 18px;
+}
+
+.spl{
+  font-weight: 700;
+}
+
+h2{
+  outline: none;
+}
+
+h2:hover{
+  cursor: pointer;
+  color: var(--hover-select);
+  transition: all 0.4s ease;
+}
+
+/* ---------------------------------------------------------------------------- */
+/* NAVBAR */
+.navbarContainer{
+  background: var(--black-bg);
+  height: 90px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--font-white);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.7);
+}
+
+.mainHeading a{
+  font-size: 45px;
+  font-weight: 400;
+  text-decoration: none;
+  color: inherit;
+}
+
+.mainHeading a:hover{
+  color: var(--hover-select);
+  transition: all 0.4s ease;
+}
+
+.navbarContainer nav{
+  gap: 2rem;
+  display: flex;
+}
+
+.navbarContainer nav a{
+  text-decoration: none;
+  color: inherit;
+  border: none;
+  border-radius: 20px;
+}
+
+.navbarContainer nav a:hover{
+  background-color: var(--hover-select);
+  transition: all 0.4s ease;
+}
+
+.element{
+  margin: 5px 20px;
+  font-size: 18px;
+}
+
+.contactBtnContainer .contactBtn{
+  width: 100px;
+  height: 30px;
+  border-radius: 55px 1% 49px;
+  cursor: pointer;
+  border: none;
+  color: var(--font-white);
+  text-transform: capitalize;
+  font-weight: 600;
+  background: linear-gradient(#ff8300, #b86308);
+}
+
+nav .menu{
+  position: absolute;
+  z-index: 500;
+  top: 0.75rem;
+  right: 0.5rem;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2.25rem;
+  height: 2rem;
+}
+
+nav .menu span{
+  height: 0.4rem;
+  width: 100%;
+  background-color: var(--font-white);
+  border-radius: 0.2rem;
+}
+
+/* ---------------------------------------------------------------------------- */
+/* HERO */
+.heroContainer{
+  height: 90vh;
+  /* background: linear-gradient(90deg, purple, blue, magenta); */
+  background: url('https://img.freepik.com/free-photo/view-3d-film-reel_23-2151069393.jpg?t=st=1710857854~exp=1710861454~hmac=58ca3599186c9b156841984218192249e9b84c15ac3c07093c0233b7d33e1092&w=740') no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: space-evenly;
+  color: white;
+  align-items: center;
+}
+
+.heroContainer .left .welcome{
+  animation: hovering 1s linear infinite;
+}
+
+.heroContainer .heroText{
+  font-size: 70px;
+  font-weight: 300;
+}
+
+.left a .exploreBolly{
+  width: 180px;
+  height: 60px;
+  font-size: 18px;
+  margin-top: 45px;
+  background-color: var(--hover-select);
+  color: var(--font-white);
+  font-weight: 500;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.circles{
+  width: 20vw;
+  height: 20vw;
+  color: var(--hover-select);
+  position: relative;
+  z-index: 1;
+}
+
+.circles span{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  background: currentColor;
+  width: 18.4%;
+  height: 18.4%;
+  border-radius: 50%;
+}
+
+.circles div{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-left: 13.32px solid;
+  border-right: 5.123076px solid;
+  border-top: 13.32px solid transparent;
+  border-radius: 100%;
+}
+
+.circles div:nth-child(1){
+  animation: animation1 1.5s linear infinite;
+}
+
+.circles div:nth-child(2){
+  animation: animation2 1.5s linear infinite;
+}
+
+.circles div:nth-child(3){
+  animation: animation3 1.5s linear infinite;
+}
+
+.circles div:nth-child(4){
+  animation: animation4 1.5s linear infinite;
+}
+
+/* ---------------------------------------------------------------------------- */
+/* ABOUT */
+.creatorDesc{
+  margin-top: 50px;
+}
+
+.creatorDesc h2{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  margin: auto 50px;
+}
+
+.grad{
+  width: 80%;
+  margin-left: 40px;
+}
+
+.grad-xl{
+  width: 98%;
+  margin: auto;
+}
+
+.creatorDesc h3{
+  font-size: 25px;
+  margin: 50px;
+  margin-bottom: 15px;
+}
+
+.creatorDesc .container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.creatorDesc ol{
+  margin-left: 50px;
+}
+
+.creatorDesc ol .teamMember{
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.creatorDesc .container .vector{
+  width: 30vw;
+  margin: 30px;
+  padding: 30px;
+  background-color: var(--black-bg);
+  border-radius: 25px;
+  box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.7);
+  animation: hovering 1s linear infinite;
+}
+
+.creatorDesc .container .aboutPara{
+  padding: 0 50px;
+  font-size: 22px;
+  align-self: flex-start;
+}
+
+.blogTop{
+  margin-top: 40px;
+}
+
+.blogHead{
+  font-size: 40px;
+  text-align: center;
+}
+
+.blogPost h4{
+  font-weight: 700;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.authSec{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 30px 140px;
+}
+
+.auth{
+  margin-left: 5px;
+}
+
+.authSec div{
+  display: flex;
+  align-items: center;
+}
+
+.circlePic{
+  width: 30px;
+}
+
+.blogPostContainer{
+  padding: 20px 60px;
+  font-size: 25px;
+}
+
+
+.barGraphContainer{
+  display: flex;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  justify-content: center;
+}
+.barGraph{
+  width: 50vw;
+}
+
+.overRide{
+  margin-bottom: 30px;
+  width: 70vw;
+}
+
+/* ---------------------------------------------------------------------------- */
+/* CONTACTS */
+.contactContainer{
+  height: 70vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.contactVector{
+  width: 30vw;
+  height: 30vw;
+  border-radius: 30px;
+  animation: hovering 1s linear infinite;
+}
+
+.contactInfo ul{
+  margin: 40px 0;
+}
+
+.contactInfo ul .element a{
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+}
+
+.contactInfo ul .element a:hover{
+  color: var(--highlight-blue);
+}
+
+.contactHead{
+  font-size: 40px;
+}
+
+/* --------------------------------------------------------------------------- */
+/* FOOTER */
+footer{
+  height: 8vh;
+  background-color: var(--black-bg);
+  color: var(--font-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+/* ============================================================================ */
+/* Animations */
+@keyframes hovering{
+  0%{
+    transform: translateY(0);
+  }50%{
+    transform: translateY(-9px);
+  }100%{
+    transform: translateY(0);
+  }
+}
+
+@keyframes animation1{
+  from{
+    transform: rotateZ(90deg) rotateX(66deg) rotateZ(0);
+  }to{
+    transform: rotateZ(90deg) rotateX(66deg) rotateZ(360deg);
+  }
+}
+
+@keyframes animation2{
+  from{
+    transform: rotateZ(135deg) rotateX(66deg) rotateZ(0);
+  }to{
+    transform: rotateZ(135deg) rotateX(66deg) rotateZ(360deg);
+  }
+}
+
+@keyframes animation3{
+  from{
+    transform: rotateZ(45deg) rotateX(66deg) rotateZ(0);
+  }to{
+    transform: rotateZ(45deg) rotateX(66deg) rotateZ(360deg);
+  }
+}
+
+@keyframes animation4{
+  from{
+    transform: rotateZ(360deg) rotateX(66deg) rotateZ(0);
+  }to{
+    transform: rotateZ(360deg) rotateX(66deg) rotateZ(360deg);
+  }
+}
+
+/* ============================================================================ */
+/* Media Queries */
+@media all and (max-width: 1250px){
+  .heroContainer{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .circles{
+    width: 30vw;
+    height: 30vw;
+  }
+}
+
+
+@media all and (min-width: 300px) and (max-width: 800px){
+  .navbarContainer{
+    display: flex;
+    justify-content: space-between;
+  }
+  .navbarContainer .mainHeading{
+
+    margin-left: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-60%, 0);
+  }
+  .left a .exploreBolly{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  .circles{
+    width: 50vw;
+    height: 50vw;
+  }
+  .navbarContainer nav, .navbarContainer .contactBtnContainer{
+    display: none;
+  }
+  .heroContainer .left .heroText{
+    font-size: 40px;
+  }
+  .creatorDesc .container{
+    display: flex;
+    flex-direction: column;
+  }
+  .creatorDesc .container .vector{
+    margin-top: 50px;
+    width: 60vw;
+  }
+  .authSec{
+    display: flex;
+    flex-direction: column;
+  }
+  .contactContainer{
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
